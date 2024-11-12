@@ -12,7 +12,7 @@ def connect_db():
     return mysql.connector.connect(
         host="localhost", 
         user="root", 
-        password="Ryan2007$", 
+        password="Ankit@16113", 
         database="hospital_db"
     )
 
@@ -35,9 +35,9 @@ class HomePage:
         title_label.pack(pady=20)
 
         # Load button icons with quality adjustment
-        self.patient_icon = ImageTk.PhotoImage(Image.open("d:\\Downloads\\dsa-notes-main\\3e666e50854f4069c37150d7e8c9bdc.jpg").resize((30, 30), Image.LANCZOS))
-        self.doctor_icon = ImageTk.PhotoImage(Image.open("d:\\Downloads\\dsa-notes-main\\3e666e50854f4069c37150d7e8c9bdc.jpg").resize((30, 30), Image.LANCZOS))
-        self.appointment_icon = ImageTk.PhotoImage(Image.open("d:\\Downloads\\dsa-notes-main\\3e666e50854f4069c37150d7e8c9bdc.jpg").resize((30, 30), Image.LANCZOS))
+        self.patient_icon = ImageTk.PhotoImage(Image.open("/Users/ankitupatil1/Downloads/hospital-building-for-healthcare-background-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior-free-vector.jpg").resize((30, 30), Image.LANCZOS))
+        self.doctor_icon = ImageTk.PhotoImage(Image.open("/Users/ankitupatil1/Downloads/hospital-building-for-healthcare-background-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior-free-vector.jpg").resize((30, 30), Image.LANCZOS))
+        self.appointment_icon = ImageTk.PhotoImage(Image.open("/Users/ankitupatil1/Downloads/hospital-building-for-healthcare-background-illustration-with-ambulance-car-doctor-patient-nurses-and-medical-clinic-exterior-free-vector.jpg").resize((30, 30), Image.LANCZOS))
 
         # Button styles with larger fonts and padding
         style.configure("Large.TButton",
