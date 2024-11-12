@@ -1,0 +1,65 @@
+
+
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,  -- Appointment ID, automatically increments
+    patient_id INT NOT NULL,            -- Patient ID
+    doctor_id int,
+    doctor_name VARCHAR(100) NOT NULL,  -- Doctor Name
+    department VARCHAR(100) NOT NULL,   -- Department Name
+    appointment_date DATE NOT NULL,     -- Appointment Date (YYYY-MM-DD)
+    appointment_time TIME NOT NULL,     -- Appointment Time (HH:MM:SS)
+    FOREIGN KEY (patient_id) REFERENCES patient_det(id)  -- Assumes there's a patient_det table with an 'id' column
+    );
+
+CREATE TABLE doctor_det (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    department VARCHAR(255) NOT NULL,
+    dob DATE NOT NULL,
+    gender ENUM('male', 'female', 'other') NOT NULL,
+    phone_number VARCHAR(15) NOT NULL,
+    house_number VARCHAR(255) NOT NULL,
+    locality VARCHAR(255) NOT NULL,
+    pincode VARCHAR(6) NOT NULL,
+    qualification VARCHAR(255) NOT NULL,
+    experience INT NOT NULL,
+    aadhar VARCHAR(12) NOT NULL
+);
+
+CREATE TABLE patient_det (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10),
+    phone_number VARCHAR(15),
+    house_number VARCHAR(50),
+    locality VARCHAR(100),
+    pincode VARCHAR(10)
+);
+
+CREATE TABLE available_slots (
+    doctor_id INT NOT NULL,
+    date DATE NOT NULL,
+    time_slot TIME NOT NULL,
+    PRIMARY KEY (doctor_id, date, time_slot)
+);
+
+INSERT INTO available_slots (doctor_id, date, time_slot) VALUES
+(1, '2024-11-10', '09:00:00'),
+(1, '2024-11-10', '10:00:00'),
+(1, '2024-11-10', '11:00:00'),
+(1, '2024-11-11', '09:30:00'),
+(1, '2024-11-11', '10:30:00'),
+(1, '2024-11-11', '11:30:00'),
+(1, '2024-11-12', '14:00:00'),
+(1, '2024-11-12', '15:00:00'),
+(1, '2024-11-12', '16:00:00'),
+(2, '2024-11-10', '13:00:00'),
+(2, '2024-11-10', '14:00:00'),
+(2, '2024-11-10', '15:00:00'),
+(2, '2024-11-11', '09:00:00'),
+(2, '2024-11-11', '10:00:00'),
+(2, '2024-11-11', '11:00:00'),
+(2, '2024-11-12', '13:30:00'),
+(2, '2024-11-12', '14:30:00'),
+(2, '2024-11-12', '15:30:00');
